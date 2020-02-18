@@ -52,6 +52,7 @@
     // Toggle desktop nav visibility when scrolled down.
     const wideNavButton = document.querySelector('.nav-primary__button');
     const siteHeaderToggleElement = document.querySelector('.site-header__inner');
+    const skipLink = document.querySelector('.skip-link');
 
     function wideNavIsOpen() {
       return wideNavButton.getAttribute('aria-expanded') === 'true';
@@ -82,6 +83,7 @@
     }
 
     siteHeaderToggleElement.addEventListener('focusin', showWideNav);
+    skipLink.addEventListener('click', hideWideNav);
 
     document.addEventListener('keyup', e => {
       if (e.keyCode === 27) {
